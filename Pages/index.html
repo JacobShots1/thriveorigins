@@ -10,22 +10,19 @@
             padding: 0;
             font-family: Arial, sans-serif;
             scroll-behavior: smooth;
-            font-weight: bold;
+            font-weight: bold; /* Ensure all text is bold by default */
             transition: background-color 0.3s, color 0.3s;
         }
 
         /* Hero Section */
-            .hero {
-                    background-image: url("https://raw.githubusercontent.com/JacobShots1/thriveorigins/main/Pages/your-background-image.PNG");
-                    background-size: cover;
-                    background-position: center;
-                    height: 100vh;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: relative;
-            }
-
+        .hero {
+            background: url('your-background-image.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
         footer {
             background-color: #121212;
@@ -106,9 +103,10 @@
         }
 
         .about .btn:hover {
-            background: #333333;
+            background: #333333; /* A lighter hover effect */
         }
 
+        /* Hamburger Menu */
         .menu-icon {
             position: absolute;
             top: 20px;
@@ -131,8 +129,8 @@
         .dropdown {
             display: none;
             position: absolute;
-            top: 60px;
-            left: 20px;
+            top: 60px; /* Keeps it just below the hamburger icon */
+            left: 20px; /* Moves the dropdown to the left */
             background-color: rgba(28, 28, 28, 0.8);
             padding: 10px;
             border-radius: 10px;
@@ -156,10 +154,12 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
 
+        /* Show Dropdown Menu on Click */
         .menu-icon.active + .dropdown {
             display: block;
         }
 
+        /* Light and Dark Mode Button (Moon Icon) */
         .mode-toggle {
             position: absolute;
             top: 20px;
@@ -167,33 +167,36 @@
             background-color: transparent;
             color: white;
             border: none;
-            font-size: 2rem;
+            font-size: 2rem; /* Larger moon icon */
             cursor: pointer;
             padding: 5px;
             transition: color 0.3s;
         }
 
         .mode-toggle:hover {
-            color: #ccc;
+            color: #ccc; /* Change color when hovered */
         }
 
+        /* Dark Mode Styles */
         .dark-mode {
             background-color: #121212;
             color: white;
         }
 
         .dark-mode .about {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7); /* Dark mode transparent background */
         }
 
         .dark-mode footer {
             background-color: #333;
         }
 
+        /* Change moon color to black in dark mode */
         .dark-mode .mode-toggle {
-            color: black;
+            color: black; /* Set moon color to black in dark mode */
         }
 
+        /* Cookie Consent Popup Styles */
         .cookie-popup {
             position: fixed;
             top: 50%;
@@ -233,6 +236,7 @@
         .cookie-popup .deny:hover {
             background-color: #c0392b;
         }
+
     </style>
 </head>
 <body>
@@ -245,7 +249,8 @@
             <h1>Home Page</h1>
         </div>
     </div>
-    <a href="#about" class="scroll">Scroll Down</a>
+        <a href="#about" class="scroll">Scroll Down</a>
+    </div>
 
     <!-- About Us Section -->
     <div id="about" class="about">
@@ -264,12 +269,14 @@
         <p>&copy; 2025 Thrive Origins. All rights reserved.</p>
     </footer>
 
+    <!-- Hamburger Menu (Top Left) -->
     <div class="menu-icon" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
     </div>
 
+    <!-- Dropdown Menu -->
     <div class="dropdown">
         <a href="index.html">Home</a>
         <a href="team.html">Meet the Team</a>
@@ -277,8 +284,10 @@
         <a href="contact.html">Contact Us</a>
     </div>
 
+    <!-- Light/Dark Mode Toggle Button (Moon Icon) -->
     <button class="mode-toggle" onclick="toggleMode()">🌙</button>
 
+    <!-- Cookie Consent Popup -->
     <div class="cookie-popup" id="cookie-popup">
         <span>We use cookies to improve your experience. By using our site, you accept our cookie policy.</span>
         <div>
@@ -288,6 +297,7 @@
     </div>
 
     <script>
+        // Function to toggle between light and dark mode
         function toggleMode() {
             document.body.classList.toggle('dark-mode');
         }
@@ -297,19 +307,25 @@
             const dropdown = document.querySelector('.dropdown');
             
             menuIcon.classList.toggle('active');
+            // Toggle dropdown visibility
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
+        // Accept cookies
         function acceptCookies() {
             document.getElementById('cookie-popup').style.display = 'none';
+            // Store user's consent in localStorage (or other method)
             localStorage.setItem('cookies-accepted', 'true');
         }
 
+        // Deny cookies
         function denyCookies() {
             document.getElementById('cookie-popup').style.display = 'none';
+            // Store user's denial in localStorage (or other method)
             localStorage.setItem('cookies-accepted', 'false');
         }
 
+        // Check if cookies have been accepted or denied
         window.onload = function() {
             if (localStorage.getItem('cookies-accepted') === 'true') {
                 document.getElementById('cookie-popup').style.display = 'none';
