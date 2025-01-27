@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Team - Thrive Origins</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            background-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('yourbackgroundimage.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-size: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .content {
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .content .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .menu-icon div {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 20px;
+            background-color: rgba(28, 28, 28, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .dropdown a,
+        .dropdown button {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 8px 16px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dropdown a:hover,
+        .dropdown button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Show Dropdown Menu on Click */
+        .menu-icon.active + .dropdown {
+            display: block;
+        }
+
+        /* Scroll Down Button */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Team Section */
+        footer {
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .floating-border {
+            background: rgba(28, 28, 28, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            width: 90%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .floating-border:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+        }
+
+        .team-header {
+            margin-bottom: 20px;
+        }
+
+        .team-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .team-header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .member {
+            width: 200px;
+            text-align: center;
+        }
+
+        .member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .member h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .member p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Button Styles */
+        .dropdown button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="logo">Thrive Origins</div>
+            <h1>Meet The Team</h1>
+            <div class="floating-border">
+                <div class="team-header">
+                    <h2>Our Team</h2>
+                    <p>
+                        Meet the talented individuals who make Thrive Origins extraordinary. Our team is dedicated to delivering excellence in esports.
+                    </p>
+                </div>
+                <div class="members">
+                    <div class="member">
+                        <img src="teamlogo.PNG" alt="Creators">
+                        <h3>CEO</h3>
+                        <p>GoToBedTriggered (Jacob)<br>
+                            LynxMGMT <br>
+                            Rover 
+                        </p>
+                    </div>
+                    <div class="member">
+                        <img src="teamlogo2.PNG" alt="Team Member 2">
+                        <h3>Team Players</h3>
+                        <p></p>
+                    </div>
+                    <div class="member">
+                        <img src="teamlogo.PNG" alt="Team Member 3">
+                        <h3>Staff Team</h3>
+                        <p>Operations Team: <br>
+                            Logan <br>
+                            Bortex <br>
+                            Management: <br>
+                            Kaizen <br>
+                            Admins: <br>
+                            Moderators: <br>
+                            Ghost
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scroll Down Button -->
+        <div class="scroll-down" onclick="window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })">
+            ↓
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Thrive Origins. All rights reserved.</p>
+    </footer>
+
+    <!-- Hamburger Menu (Top Left) -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <a href="index.html">Home</a>
+        <a href="team.html">Meet the Team</a>
+        <a href="events.html">Upcoming Events</a>
+        <a href="socials.html">Socials</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+
+    <script>
+        function toggleMenu() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const dropdown = document.querySelector('.dropdown');
+            
+            menuIcon.classList.toggle('active');
+            // Toggle dropdown visibility
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
